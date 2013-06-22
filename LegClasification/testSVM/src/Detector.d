@@ -1,4 +1,4 @@
-src/procesarDatos.d: ../src/procesarDatos.cpp ../include/Detector.h \
+src/Detector.d: ../src/Detector.cpp ../include/Detector.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPose2D.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPose.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPoseOrPoint.h \
@@ -207,11 +207,6 @@ src/procesarDatos.d: ../src/procesarDatos.cpp ../include/Detector.h \
  /usr/local/include/mrpt/base/include/mrpt/math/utils.h \
  /usr/local/include/mrpt/base/include/mrpt/math/ops_vectors.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPoseOrPoint_detail.h \
- /usr/local/include/mrpt/base/include/mrpt/utils/CConfigFile.h \
- /usr/local/include/mrpt/base/include/mrpt/utils/CConfigFileBase.h \
- /usr/local/include/mrpt/base/include/mrpt/utils/TEnumType.h \
- /usr/local/include/mrpt/base/include/mrpt/system/string_utils.h \
- /usr/local/include/mrpt/base/include/mrpt/system/filesystem.h \
  /usr/local/include/mrpt/gui/include/mrpt/gui/CDisplayWindowPlots.h \
  /usr/local/include/mrpt/gui/include/mrpt/gui/CBaseGUIWindow.h \
  /usr/local/include/mrpt/base/include/mrpt/synch.h \
@@ -232,13 +227,18 @@ src/procesarDatos.d: ../src/procesarDatos.cpp ../include/Detector.h \
  /usr/local/include/mrpt/base/include/mrpt/utils/TColor.h \
  /usr/local/include/mrpt/base/include/mrpt/utils/TCamera.h \
  /usr/local/include/mrpt/base/include/mrpt/utils/CLoadableOptions.h \
+ /usr/local/include/mrpt/base/include/mrpt/utils/CConfigFileBase.h \
+ /usr/local/include/mrpt/base/include/mrpt/utils/TEnumType.h \
+ /usr/local/include/mrpt/base/include/mrpt/system/string_utils.h \
  /usr/local/include/mrpt/base/include/mrpt/utils/CConfigFileMemory.h \
  /usr/local/include/mrpt/base/include/mrpt/utils/CStringList.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPose3DQuat.h \
  /usr/local/include/mrpt/base/include/mrpt/math/CQuaternion.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPoint3D.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPoint.h \
- /usr/local/include/mrpt/base/include/mrpt/poses/CPose3D.h
+ /usr/local/include/mrpt/base/include/mrpt/poses/CPose3D.h \
+ /usr/local/include/mrpt/base/include/mrpt/utils/CConfigFile.h \
+ /usr/local/include/mrpt/base/include/mrpt/system/filesystem.h
 
 ../include/Detector.h:
 
@@ -658,16 +658,6 @@ src/procesarDatos.d: ../src/procesarDatos.cpp ../include/Detector.h \
 
 /usr/local/include/mrpt/base/include/mrpt/poses/CPoseOrPoint_detail.h:
 
-/usr/local/include/mrpt/base/include/mrpt/utils/CConfigFile.h:
-
-/usr/local/include/mrpt/base/include/mrpt/utils/CConfigFileBase.h:
-
-/usr/local/include/mrpt/base/include/mrpt/utils/TEnumType.h:
-
-/usr/local/include/mrpt/base/include/mrpt/system/string_utils.h:
-
-/usr/local/include/mrpt/base/include/mrpt/system/filesystem.h:
-
 /usr/local/include/mrpt/gui/include/mrpt/gui/CDisplayWindowPlots.h:
 
 /usr/local/include/mrpt/gui/include/mrpt/gui/CBaseGUIWindow.h:
@@ -708,6 +698,12 @@ src/procesarDatos.d: ../src/procesarDatos.cpp ../include/Detector.h \
 
 /usr/local/include/mrpt/base/include/mrpt/utils/CLoadableOptions.h:
 
+/usr/local/include/mrpt/base/include/mrpt/utils/CConfigFileBase.h:
+
+/usr/local/include/mrpt/base/include/mrpt/utils/TEnumType.h:
+
+/usr/local/include/mrpt/base/include/mrpt/system/string_utils.h:
+
 /usr/local/include/mrpt/base/include/mrpt/utils/CConfigFileMemory.h:
 
 /usr/local/include/mrpt/base/include/mrpt/utils/CStringList.h:
@@ -721,3 +717,7 @@ src/procesarDatos.d: ../src/procesarDatos.cpp ../include/Detector.h \
 /usr/local/include/mrpt/base/include/mrpt/poses/CPoint.h:
 
 /usr/local/include/mrpt/base/include/mrpt/poses/CPose3D.h:
+
+/usr/local/include/mrpt/base/include/mrpt/utils/CConfigFile.h:
+
+/usr/local/include/mrpt/base/include/mrpt/system/filesystem.h:

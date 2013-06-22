@@ -1,4 +1,4 @@
-src/Detector.d: ../src/Detector.cpp ../include/Detector.h \
+src/testSVM.d: ../src/testSVM.cpp ../include/Detector.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPose2D.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPose.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPoseOrPoint.h \
@@ -238,7 +238,8 @@ src/Detector.d: ../src/Detector.cpp ../include/Detector.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPoint.h \
  /usr/local/include/mrpt/base/include/mrpt/poses/CPose3D.h \
  /usr/local/include/mrpt/base/include/mrpt/utils/CConfigFile.h \
- /usr/local/include/mrpt/base/include/mrpt/system/filesystem.h
+ /usr/local/include/mrpt/base/include/mrpt/system/filesystem.h \
+ ../include/svm.h
 
 ../include/Detector.h:
 
@@ -721,3 +722,5 @@ src/Detector.d: ../src/Detector.cpp ../include/Detector.h \
 /usr/local/include/mrpt/base/include/mrpt/utils/CConfigFile.h:
 
 /usr/local/include/mrpt/base/include/mrpt/system/filesystem.h:
+
+../include/svm.h:

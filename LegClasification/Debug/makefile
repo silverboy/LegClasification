@@ -44,7 +44,7 @@ all: LegClasification
 LegClasification: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++  -o "LegClasification" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/usr/local/lib -o "LegClasification" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

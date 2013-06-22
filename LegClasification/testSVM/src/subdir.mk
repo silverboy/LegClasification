@@ -5,18 +5,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/Detector.cpp \
-../src/main.cpp \
-../src/svm.cpp 
+../src/svm.cpp \
+../src/testSVM.cpp 
 
 OBJS += \
 ./src/Detector.o \
-./src/main.o \
-./src/svm.o 
+./src/svm.o \
+./src/testSVM.o 
 
 CPP_DEPS += \
 ./src/Detector.d \
-./src/main.d \
-./src/svm.d 
+./src/svm.d \
+./src/testSVM.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

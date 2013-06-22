@@ -35,10 +35,10 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.715617585" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1507056915" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.685827760" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/"/>
 									<listOptionValue builtIn="false" value="/usr/include"/>
 									<listOptionValue builtIn="false" value="../include"/>
@@ -51,16 +51,18 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.573213793" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1672274861" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.2074744878" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.942995928" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.2100214746" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.857066439" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
-								<option id="gnu.cpp.link.option.paths.257350654" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
+								<option id="gnu.cpp.link.option.paths.257350654" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/usr/local/lib"/>
+								</option>
 								<option id="gnu.cpp.link.option.libs.1801510397" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-base"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-gui"/>
@@ -88,12 +90,13 @@
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
 				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
 					<externalSetting contentTypes="org.eclipse.cdt.core.cSource:org.eclipse.cdt.core.cxxSource">
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/base/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/mrpt-config/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/gui/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/opengl/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/base/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/mrpt-config/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/gui/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/opengl/include/"/>
 					</externalSetting>
 					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
+						<entry flags="RESOLVED" kind="libraryPath" name="/usr/local/lib"/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-base" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-gui" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-opengl" srcPrefixMapping="" srcRootPath=""/>
@@ -125,10 +128,10 @@
 								<option id="gnu.cpp.compiler.exe.release.option.optimization.level.401732224" name="Optimization Level" superClass="gnu.cpp.compiler.exe.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.release.option.debugging.level.37869346" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1548441299" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.69101935" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -136,16 +139,18 @@
 								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.exe.release.option.optimization.level.20260548" name="Optimization Level" superClass="gnu.c.compiler.exe.release.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.release.option.debugging.level.772158166" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.298860423" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1603037104" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.1430230736" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.504444248" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release">
-								<option id="gnu.cpp.link.option.paths.694275409" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
+								<option id="gnu.cpp.link.option.paths.694275409" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/usr/local/lib"/>
+								</option>
 								<option id="gnu.cpp.link.option.libs.1959008507" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-base"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-gui"/>
@@ -170,12 +175,13 @@
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
 				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
 					<externalSetting contentTypes="org.eclipse.cdt.core.cSource:org.eclipse.cdt.core.cxxSource">
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/base/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/mrpt-config/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/gui/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/opengl/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/base/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/mrpt-config/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/gui/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/opengl/include/"/>
 					</externalSetting>
 					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
+						<entry flags="RESOLVED" kind="libraryPath" name="/usr/local/lib"/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-base" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-gui" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-opengl" srcPrefixMapping="" srcRootPath=""/>
@@ -207,7 +213,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${config_name}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="Lee medidas del laser y genera archivo de datos para SVM" id="cdt.managedbuild.config.gnu.exe.debug.572405195.83850515" name="ProcesarDatos" parent="cdt.managedbuild.config.gnu.exe.debug" postbuildStep="../compilacion_remota.sh disable" prebuildStep="">
+				<configuration artifactName="ProcesarDatos" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="Lee medidas del laser y genera archivo de datos para SVM" id="cdt.managedbuild.config.gnu.exe.debug.572405195.83850515" name="ProcesarDatos" parent="cdt.managedbuild.config.gnu.exe.debug" postbuildStep="../compilacion_remota.sh disable" prebuildStep="">
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.572405195.83850515." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.2074605779" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug.1458696835" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
@@ -217,10 +223,10 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1376583929" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1955667316" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.389712077" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/"/>
 									<listOptionValue builtIn="false" value="/usr/include"/>
 									<listOptionValue builtIn="false" value="../include"/>
@@ -233,16 +239,18 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.1888268881" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.665970536" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1908096897" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.395283067" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1048630786" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1636687083" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
-								<option id="gnu.cpp.link.option.paths.714983478" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
+								<option id="gnu.cpp.link.option.paths.714983478" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/usr/local/lib"/>
+								</option>
 								<option id="gnu.cpp.link.option.libs.1569609661" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-base"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-gui"/>
@@ -270,12 +278,13 @@
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
 				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
 					<externalSetting contentTypes="org.eclipse.cdt.core.cSource:org.eclipse.cdt.core.cxxSource">
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/base/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/mrpt-config/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/gui/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/opengl/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/base/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/mrpt-config/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/gui/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/opengl/include/"/>
 					</externalSetting>
 					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
+						<entry flags="RESOLVED" kind="libraryPath" name="/usr/local/lib"/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-base" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-gui" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-opengl" srcPrefixMapping="" srcRootPath=""/>
@@ -308,7 +317,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="TestSVM" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="Construye una SVM con los datos generados anteriormente" id="cdt.managedbuild.config.gnu.exe.debug.572405195.981120704" name="Clasificar" parent="cdt.managedbuild.config.gnu.exe.debug" postbuildStep="../compilacion_remota.sh disable" prebuildStep="">
+				<configuration artifactName="Clasificar" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="Construye una SVM con los datos generados anteriormente" id="cdt.managedbuild.config.gnu.exe.debug.572405195.981120704" name="Clasificar" parent="cdt.managedbuild.config.gnu.exe.debug" postbuildStep="../compilacion_remota.sh disable" prebuildStep="">
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.572405195.981120704." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.305011386" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug.2135018866" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
@@ -318,10 +327,10 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.2116971174" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1373050478" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.633854675" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/"/>
 									<listOptionValue builtIn="false" value="/usr/include"/>
 									<listOptionValue builtIn="false" value="../include"/>
@@ -334,16 +343,18 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.1893786757" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1840994586" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.654078973" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.98990617" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.137235008" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1319422619" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
-								<option id="gnu.cpp.link.option.paths.727513269" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
+								<option id="gnu.cpp.link.option.paths.727513269" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/usr/local/lib"/>
+								</option>
 								<option id="gnu.cpp.link.option.libs.2036033671" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-base"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-gui"/>
@@ -371,12 +382,13 @@
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
 				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
 					<externalSetting contentTypes="org.eclipse.cdt.core.cSource:org.eclipse.cdt.core.cxxSource">
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/base/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/mrpt-config/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/gui/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/opengl/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/base/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/mrpt-config/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/gui/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/opengl/include/"/>
 					</externalSetting>
 					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
+						<entry flags="RESOLVED" kind="libraryPath" name="/usr/local/lib"/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-base" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-gui" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-opengl" srcPrefixMapping="" srcRootPath=""/>
@@ -419,10 +431,10 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.726476645" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.917227402" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.529120879" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/"/>
 									<listOptionValue builtIn="false" value="/usr/include"/>
 									<listOptionValue builtIn="false" value="../include"/>
@@ -435,16 +447,18 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.1318737017" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1940672820" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1997396911" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/base/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/mrpt-config/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/gui/include/"/>
-									<listOptionValue builtIn="false" value="/usr/include/mrpt/opengl/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/base/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/mrpt-config/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/gui/include/"/>
+									<listOptionValue builtIn="false" value="/usr/local/include/mrpt/opengl/include/"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.106593438" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1785774256" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1930072468" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
-								<option id="gnu.cpp.link.option.paths.1508338423" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
+								<option id="gnu.cpp.link.option.paths.1508338423" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/usr/local/lib"/>
+								</option>
 								<option id="gnu.cpp.link.option.libs.1517879763" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-base"/>
 									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="mrpt-gui"/>
@@ -472,12 +486,13 @@
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
 				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
 					<externalSetting contentTypes="org.eclipse.cdt.core.cSource:org.eclipse.cdt.core.cxxSource">
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/base/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/mrpt-config/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/gui/include/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/mrpt/opengl/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/base/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/mrpt-config/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/gui/include/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/local/include/mrpt/opengl/include/"/>
 					</externalSetting>
 					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
+						<entry flags="RESOLVED" kind="libraryPath" name="/usr/local/lib"/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-base" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-gui" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="UNDEFINED" kind="libraryFile" name="mrpt-opengl" srcPrefixMapping="" srcRootPath=""/>
@@ -495,6 +510,7 @@
 		<configuration configurationName="Release">
 			<resource resourceType="PROJECT" workspacePath="/LegDetection"/>
 		</configuration>
+		<configuration configurationName="testSVM"/>
 		<configuration configurationName="ProcesarDatos">
 			<resource resourceType="PROJECT" workspacePath="/LegClasification"/>
 		</configuration>
@@ -509,6 +525,9 @@
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.572405195.959052306;cdt.managedbuild.config.gnu.exe.debug.572405195.959052306.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.2033443334;cdt.managedbuild.tool.gnu.cpp.compiler.input.1440481656">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.572405195.981120704;cdt.managedbuild.config.gnu.exe.debug.572405195.981120704.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1415455356;cdt.managedbuild.tool.gnu.c.compiler.input.98990617">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
@@ -525,6 +544,9 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.466010436;cdt.managedbuild.config.gnu.exe.release.466010436.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.2034073300;cdt.managedbuild.tool.gnu.c.compiler.input.1603037104">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.572405195.959052306;cdt.managedbuild.config.gnu.exe.debug.572405195.959052306.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.433249862;cdt.managedbuild.tool.gnu.c.compiler.input.106593438">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.572405195.83850515;cdt.managedbuild.config.gnu.exe.debug.572405195.83850515.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1266244216;cdt.managedbuild.tool.gnu.cpp.compiler.input.2111893598">
