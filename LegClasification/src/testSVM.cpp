@@ -44,7 +44,7 @@ int main( int argc, const char* argv[] )
 
 
 
-	for(int i=0;i<20;i++){
+	for(int i=16;i<20;i++){
 
 		char nombre[100];
 
@@ -66,17 +66,9 @@ int main( int argc, const char* argv[] )
 		// Medidas
 		puntos=detector.getPuntos();
 
-		Eigen::MatrixXf rectas=detector.eliminarRectas(60,720);
-
+		Eigen::MatrixXf rectas=detector.eliminarRectas(30,181);
 		cout << rectas << endl;
 
-		medidasPlot.clear();
-
-		for(int j=0;j < rectas.rows();j++){
-
-			Grafico::dibujarLinea(&medidasPlot,rectas(j,0),rectas(j,1),limites);
-
-		}
 
 		vector<Cluster> piernas=detector.clusterizar(0.1,3);;
 
@@ -89,8 +81,19 @@ int main( int argc, const char* argv[] )
 			my.push_back(puntos->at(i).y());
 		}
 
-		clusterPlot.clear();
+		medidasPlot.clear();
 		string fileName(nombre);
+		medidasPlot.setWindowTitle("Medidas - " + fileName.substr(fileName.find_last_of("/")+1));
+		medidasPlot.plot(mx,my,".b2");
+
+		for(int j=0;j < rectas.rows();j++){
+
+			Grafico::dibujarLinea(&medidasPlot,rectas(j,0),rectas(j,1),limites);
+
+		}
+
+
+		clusterPlot.clear();
 		clusterPlot.setWindowTitle("Cluster - " + fileName.substr(fileName.find_last_of("/")+1));
 		clusterPlot.hold_on();
 
@@ -139,8 +142,7 @@ int main( int argc, const char* argv[] )
 
 		//detector.printClusters(piernas);
 
-		medidasPlot.setWindowTitle("Medidas - " + fileName.substr(fileName.find_last_of("/")+1));
-		medidasPlot.plot(mx,my,".b2");
+
 		//piernasPlot.plot(px,py,".r2");
 
 		medidasPlot.axis(-0.5,3,-3,3);

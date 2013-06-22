@@ -234,6 +234,7 @@ Eigen::MatrixXf Detector::eliminarRectas(int Np, int Ntheta){
 
 	// Comienzo a puntuar
 
+
 	for(int i=0; i < puntos.size()-1; i++ ){
 
 		if(distancias[i] < max_dist && distancias [i+1] < max_dist){
@@ -283,8 +284,13 @@ Eigen::MatrixXf Detector::eliminarRectas(int Np, int Ntheta){
 			if(scores(i,j) > 10){
 
 				rectas.conservativeResize(rectas.rows()+1,Eigen::NoChange);
-				rectas(rectas.rows()-1,0)=i*max_dist/Np + max_dist/(2*Np);
-				rectas(rectas.rows()-1,1)=j*2*M_PI/Ntheta - M_PI + M_PI/Ntheta;
+				p=i*max_dist/Np + max_dist/(2*Np);
+				theta=j*2*M_PI/Ntheta - M_PI + M_PI/Ntheta;
+				rectas(rectas.rows()-1,0)=p;
+				rectas(rectas.rows()-1,1)=theta;
+
+				// Filtro puntos pertenecientes a la recta
+				filtrarPuntosEnRecta(TLine2D(cos(theta),sin(theta),-p),0.1);
 
 			}
 		}
@@ -295,6 +301,29 @@ Eigen::MatrixXf Detector::eliminarRectas(int Np, int Ntheta){
 
 	return rectas;
 
+}
+
+
+/**
+ *
+ * Funcion que establece a max_dist aquellos puntos que se encuentran a una distancia inferior
+ *  a la indicada como argumento a la recta pasada como argumento
+ *
+ *
+ */
+
+
+
+void Detector::filtrarPuntosEnRecta(TLine2D recta,double distancia){
+
+	for(int i=0;i < puntos.size(); i++){
+
+		if(distancias[i] < max_dist && recta.distance(TPoint2D(puntos[i])) < distancia ){
+			distancias[i]=max_dist;
+
+		}
+
+	}
 }
 
 void Detector::filtrarDatos(){

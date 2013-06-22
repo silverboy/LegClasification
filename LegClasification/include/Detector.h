@@ -69,6 +69,7 @@ public:
 
 	//Function
 	Eigen::MatrixXf eliminarRectas(int Np,int Ntheta);
+	void filtrarPuntosEnRecta(TLine2D recta,double distancia);
 
 
 private:
