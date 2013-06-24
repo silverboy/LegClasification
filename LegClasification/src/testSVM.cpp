@@ -9,10 +9,19 @@
 
 #include "Detector.h"
 #include "svm.h"
+#include <sys/time.h>
 
 #define Malloc(type,n) (type *)malloc((n)*sizeof(type))
 
 using namespace mrpt::gui;
+
+/* retorna "a - b" en milisegundos */
+double timeval_diff(struct timeval *a, struct timeval *b)
+{
+  return
+    (double)(a->tv_sec*1000 + (double)a->tv_usec/1000) -
+    (double)(b->tv_sec*1000 + (double)b->tv_usec/1000);
+}
 
 
 
@@ -28,6 +37,8 @@ int main( int argc, const char* argv[] )
 	vector<CPose2D>* puntos;
 
 	Detector detector;
+
+	struct timeval t_ini,t_fin;
 
 	// Cargar modelo SVM
 	struct svm_model *model=svm_load_model("svm_model");
@@ -66,9 +77,13 @@ int main( int argc, const char* argv[] )
 		// Medidas
 		puntos=detector.getPuntos();
 
+		gettimeofday(&t_ini,NULL);
 		Eigen::MatrixXf rectas=detector.eliminarRectas(30,181);
+		gettimeofday(&t_fin,NULL);
+		cout << "Tiempo eliminar Rectas: " << timeval_diff(&t_fin,&t_ini) << endl;
 		cout << rectas << endl;
 
+		gettimeofday(&t_ini,NULL);
 
 		vector<Cluster> piernas=detector.clusterizar(0.1,3);;
 
@@ -148,6 +163,8 @@ int main( int argc, const char* argv[] )
 		medidasPlot.axis(-0.5,3,-3,3);
 		clusterPlot.axis(-0.5,3,-3,3);
 		piernasPlot.axis(-0.5,3,-3,3);
+		gettimeofday(&t_fin,NULL);
+		cout << "Tiempo resto proceso: " << timeval_diff(&t_fin,&t_ini) << endl;
 
 		cout << "Presione cualquier tecla para pasar a la siguiente muestra" << endl;
 
