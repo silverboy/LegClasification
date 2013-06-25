@@ -63,6 +63,7 @@ public:
 	vector<CPose2D>* getPuntos();
 	void abrirFichero(char* filename,bool filtrar_distancia);
 	vector<Cluster> clusterizar(float umbral,int min_puntos);
+	vector<CPose2D> buscarPersonas(vector<Cluster> piernas);
 
 	void printClusters(vector<Cluster> piernas);
 	void filtrarDatos();

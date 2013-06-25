@@ -234,47 +234,55 @@ Eigen::MatrixXf Detector::eliminarRectas(int Np, int Ntheta){
 
 	// Comienzo a puntuar
 
+	// Puntos siguientes a considerar
+	int siguientes=2;
+
 
 	for(int i=0; i < puntos.size()-1; i++ ){
 
-		if(distancias[i] < max_dist && distancias [i+1] < max_dist){
+		int fin=min((int)puntos.size(),i+siguientes+1);
 
-			// Si ambos puntos se encuentran dentro del
-			// rango de distancias considero la recta que los une
+		for(int j=i+1;j<fin;j++){
 
-			TLine2D auxiliar(TPoint2D(puntos[i]),TPoint2D(puntos[i+1]));
-			A=auxiliar.coefs[0];
-			B=auxiliar.coefs[1];
-			C=auxiliar.coefs[2];
+			if(distancias[i] < max_dist && distancias [j] < max_dist){
 
-			// Si C no es negativo invierto el signo de todos
-			if(C > 0){
-				A=-A;
-				B=-B;
-				C=-C;
+				// Si ambos puntos se encuentran dentro del
+				// rango de distancias considero la recta que los une
+
+				TLine2D auxiliar(TPoint2D(puntos[i]),TPoint2D(puntos[j]));
+				A=auxiliar.coefs[0];
+				B=auxiliar.coefs[1];
+				C=auxiliar.coefs[2];
+
+				// Si C no es negativo invierto el signo de todos
+				if(C > 0){
+					A=-A;
+					B=-B;
+					C=-C;
+				}
+
+				theta=atan2(B,A);
+				p=auxiliar.distance(TPoint2D(0,0));
+
+				fila=floor(p*Np/max_dist);
+				columna=floor(theta*Ntheta/(2*M_PI) + (double)Ntheta/2 );
+
+
+				if(fila >= Np){
+					cout << "Error en fila en transformada Hough" << endl;
+					exit(0);
+				}
+
+				if(columna >= Ntheta){
+					cout << "Error en columna en transformada Hough" << endl;
+					exit(0);
+				}
+
+				scores(fila,columna)++;
+
 			}
-
-			theta=atan2(B,A);
-			p=auxiliar.distance(TPoint2D(0,0));
-
-			fila=floor(p*Np/max_dist);
-			columna=floor(theta*Ntheta/(2*M_PI) + (double)Ntheta/2 );
-
-
-			if(fila >= Np){
-				cout << "Error en fila en transformada Hough" << endl;
-				exit(0);
-			}
-
-			if(columna >= Ntheta){
-				cout << "Error en columna en transformada Hough" << endl;
-				exit(0);
-			}
-
-			scores(fila,columna)++;
-
-		}
-	}
+		} // Fin for j
+	}//Fin for i
 
 	cout << scores << endl;
 
@@ -300,6 +308,38 @@ Eigen::MatrixXf Detector::eliminarRectas(int Np, int Ntheta){
 
 
 	return rectas;
+
+}
+
+/**
+ * Funcion que busca personas y devuelve su posicion
+ */
+vector<CPose2D> Detector::buscarPersonas(vector<Cluster> piernas){
+
+	vector<CPose2D> personas;
+
+	// Iteramos en el vector Cluster
+	for(int i=0; i < piernas.size()-1 ; i++){
+		// Seleccionado el primer elemento busco otro que se encuentre a una distancia razonable
+		for(int j=i+1;j < piernas.size();j++){
+
+			if(piernas[i].getCentro().distanceTo(piernas[j].getCentro()) < 1){
+				// Considero que esos dos pùntos forman una persona
+				CPose2D punto=piernas[i].getCentro()+piernas[j].getCentro();
+				punto.x(punto.x()/2);
+				punto.y(punto.y()/2);
+				personas.push_back(punto);
+
+				// Elimino ambos elementos del vector y rompo el bucle for
+				piernas.erase(piernas.begin()+j);
+				piernas.erase(piernas.begin()+i);
+				i--;
+				break;
+			}
+		}
+
+		return personas;
+	}
 
 }
 

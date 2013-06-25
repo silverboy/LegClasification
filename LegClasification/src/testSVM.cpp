@@ -28,7 +28,7 @@ double timeval_diff(struct timeval *a, struct timeval *b)
 int main( int argc, const char* argv[] )
 {
 
-	vector<double> mx,my,px,py;
+	vector<double> mx,my,px,py,tiempos;
 
 	CDisplayWindowPlots medidasPlot("Medidas");
 	CDisplayWindowPlots clusterPlot("Cluster");
@@ -37,6 +37,7 @@ int main( int argc, const char* argv[] )
 	vector<CPose2D>* puntos;
 
 	Detector detector;
+
 
 	struct timeval t_ini,t_fin;
 
@@ -55,7 +56,7 @@ int main( int argc, const char* argv[] )
 
 
 
-	for(int i=16;i<20;i++){
+	for(int i=0;i<20;i++){
 
 		char nombre[100];
 
@@ -82,6 +83,8 @@ int main( int argc, const char* argv[] )
 		gettimeofday(&t_fin,NULL);
 		cout << "Tiempo eliminar Rectas: " << timeval_diff(&t_fin,&t_ini) << endl;
 		cout << rectas << endl;
+
+		tiempos.push_back(timeval_diff(&t_fin,&t_ini));
 
 		gettimeofday(&t_ini,NULL);
 
@@ -152,13 +155,25 @@ int main( int argc, const char* argv[] )
 				// El clasificador SVM lo reconoce como pierna
 				piernasPlot.plot(px,py,formato[j%2]);
 			}
+			else{
+				// No es una pierna, lo elimino del vector
+				piernas.erase(piernas.begin()+j);
+				j--;
+			}
 
 		}
 
-		//detector.printClusters(piernas);
+		vector<CPose2D> personas=detector.buscarPersonas(piernas);
+		cout << "Personas detectadas: " << personas.size() << endl;
 
-
-		//piernasPlot.plot(px,py,".r2");
+		detector.printClusters(piernas);
+		px.clear();
+		py.clear();
+		for(int k=0;k < personas.size(); k++){
+			px.push_back(personas[k].x());
+			py.push_back(personas[k].y());
+		}
+		piernasPlot.plot(px,py,".c4");
 
 		medidasPlot.axis(-0.5,3,-3,3);
 		clusterPlot.axis(-0.5,3,-3,3);
@@ -171,6 +186,15 @@ int main( int argc, const char* argv[] )
 		mrpt::system::os::getch();
 
 	}
+
+	cout << "Tiempos: " << tiempos << endl;
+
+	double media(0);
+	for(int i=0; i< tiempos.size();i++){
+		media+=tiempos[i];
+	}
+
+	cout << "Tiempo medio: " << media/tiempos.size() << endl;
 
 
 
