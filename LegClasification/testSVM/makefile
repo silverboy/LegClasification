@@ -44,7 +44,7 @@ all: TestSVM
 TestSVM: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L/usr/local/lib -o "TestSVM" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++  -o "TestSVM" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
