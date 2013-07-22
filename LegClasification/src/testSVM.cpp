@@ -56,11 +56,12 @@ int main( int argc, const char* argv[] )
 
 
 
-	for(int i=0;i<20;i++){
+	for(int i=1054;i<1065;i++){
 
 		char nombre[100];
 
-		sprintf(nombre,"/home/jplata/Eclipse/MedidasPiernas/30Abril/raw_laser%i.dat",i);
+		//sprintf(nombre,"/home/jplata/Eclipse/MedidasPiernas/30Abril/raw_laser%i.dat",i);
+		sprintf(nombre,"/home/jplata/Eclipse/MedidasPiernas/17Julio/Datos/laser%i.dat",i);
 		cout << "Fichero:  " << nombre << endl;
 
 		// Comprobar existencia del archivo
@@ -71,6 +72,7 @@ int main( int argc, const char* argv[] )
 			continue;
 		}
 
+		gettimeofday(&t_ini,NULL);
 
 		detector.abrirFichero(nombre,false);
 
@@ -78,15 +80,15 @@ int main( int argc, const char* argv[] )
 		// Medidas
 		puntos=detector.getPuntos();
 
-		gettimeofday(&t_ini,NULL);
+		//gettimeofday(&t_ini,NULL);
 		Eigen::MatrixXf rectas=detector.eliminarRectas(30,181);
-		gettimeofday(&t_fin,NULL);
-		cout << "Tiempo eliminar Rectas: " << timeval_diff(&t_fin,&t_ini) << endl;
-		cout << rectas << endl;
+		//gettimeofday(&t_fin,NULL);
+		//cout << "Tiempo eliminar Rectas: " << timeval_diff(&t_fin,&t_ini) << endl;
+		//cout << rectas << endl;
 
-		tiempos.push_back(timeval_diff(&t_fin,&t_ini));
+		//tiempos.push_back(timeval_diff(&t_fin,&t_ini));
 
-		gettimeofday(&t_ini,NULL);
+		//gettimeofday(&t_ini,NULL);
 
 		vector<Cluster> piernas=detector.clusterizar(0.1,3);;
 
@@ -178,8 +180,16 @@ int main( int argc, const char* argv[] )
 		medidasPlot.axis(-0.5,3,-3,3);
 		clusterPlot.axis(-0.5,3,-3,3);
 		piernasPlot.axis(-0.5,3,-3,3);
+		//gettimeofday(&t_fin,NULL);
+
 		gettimeofday(&t_fin,NULL);
-		cout << "Tiempo resto proceso: " << timeval_diff(&t_fin,&t_ini) << endl;
+			//cout << "Tiempo eliminar Rectas: " << timeval_diff(&t_fin,&t_ini) << endl;
+			//cout << rectas << endl;
+
+		tiempos.push_back(timeval_diff(&t_fin,&t_ini));
+
+
+		//cout << "Tiempo resto proceso: " << timeval_diff(&t_fin,&t_ini) << endl;
 
 		cout << "Presione cualquier tecla para pasar a la siguiente muestra" << endl;
 
