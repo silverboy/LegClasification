@@ -10,10 +10,12 @@
 #include "Detector.h"
 #include "svm.h"
 #include <sys/time.h>
+#include <mrpt/utils/CTicTac.h>
 
 #define Malloc(type,n) (type *)malloc((n)*sizeof(type))
 
 using namespace mrpt::gui;
+using namespace mrpt::utils;
 
 /* retorna "a - b" en milisegundos */
 double timeval_diff(struct timeval *a, struct timeval *b)
@@ -38,8 +40,8 @@ int main( int argc, const char* argv[] )
 
 	Detector detector;
 
+	CTicTac timer;
 
-	struct timeval t_ini,t_fin;
 
 	// Cargar modelo SVM
 	struct svm_model *model=svm_load_model("svm_model");
@@ -56,12 +58,12 @@ int main( int argc, const char* argv[] )
 
 
 
-	for(int i=1054;i<1065;i++){
+	for(int i=0;i<19;i++){
 
 		char nombre[100];
 
-		//sprintf(nombre,"/home/jplata/Eclipse/MedidasPiernas/30Abril/raw_laser%i.dat",i);
-		sprintf(nombre,"/home/jplata/Eclipse/MedidasPiernas/17Julio/Datos/laser%i.dat",i);
+		sprintf(nombre,"/home/jplata/Eclipse/MedidasPiernas/30Abril/raw_laser%i.dat",i);
+		//sprintf(nombre,"/home/jplata/Eclipse/MedidasPiernas/17Julio/Datos/laser%i.dat",i);
 		cout << "Fichero:  " << nombre << endl;
 
 		// Comprobar existencia del archivo
@@ -72,7 +74,7 @@ int main( int argc, const char* argv[] )
 			continue;
 		}
 
-		gettimeofday(&t_ini,NULL);
+		timer.Tic();
 
 		detector.abrirFichero(nombre,false);
 
@@ -182,18 +184,18 @@ int main( int argc, const char* argv[] )
 		piernasPlot.axis(-0.5,3,-3,3);
 		//gettimeofday(&t_fin,NULL);
 
-		gettimeofday(&t_fin,NULL);
+
 			//cout << "Tiempo eliminar Rectas: " << timeval_diff(&t_fin,&t_ini) << endl;
 			//cout << rectas << endl;
 
-		tiempos.push_back(timeval_diff(&t_fin,&t_ini));
+		tiempos.push_back(timer.Tac()*1000);
 
 
 		//cout << "Tiempo resto proceso: " << timeval_diff(&t_fin,&t_ini) << endl;
 
 		cout << "Presione cualquier tecla para pasar a la siguiente muestra" << endl;
 
-		mrpt::system::os::getch();
+		//mrpt::system::os::getch();
 
 	}
 
